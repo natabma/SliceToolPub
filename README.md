@@ -8,9 +8,9 @@ The usage is demonstrated in a a quick video.
 
 ## Features
 | Scaling | Trimming |
-| ![Alt 1](./img/scaling.png) | ![Alt 1](./img/trimming.png) |
+| <img src="./img/scaling.png" width="500"> | <img src="./img/trimming.png" width="500"> |
 | Slicing | Results |
-| ![Alt 1](./img/slicing.png) | ![Alt 1](./img/results.png)  |
+| <img src="./img/slicing.png" width="500"> | <img src="./img/results.png" width="500">  |
 
 ## Installation
 First, download this repository and unpack it. Notice that the folder must be on your local harddrive.
