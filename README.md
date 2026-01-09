@@ -6,6 +6,12 @@ Slice Tool is a utility for easy and quick creation of many equidistant slices o
 ## Usage
 The usage is demonstrated in a a quick video.
 
+## Features
+| Scaling | Trimming |
+| ![Alt 1](./img/scaling.png) | ![Alt 1](./img/trimming.png) |
+| Slicing | Results |
+| ![Alt 1](./img/slicing.png) | ![Alt 1](./img/results.png)  |
+
 ## Installation
 First, download this repository and unpack it. Notice that the folder must be on your local harddrive.
 
