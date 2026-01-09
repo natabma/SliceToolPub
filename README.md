@@ -8,19 +8,19 @@ Slice Tool is a utility for easy and quick creation of many equidistant slices o
 
 <div style="max-width:300px;margin:10px;">
 <h3>Scale the Mesh</h3>
-<img src="./img/scaling.png">
+<img src="./img/scaling.png" width="300">
 <p >Different unit systems are a common issue when working with 3D scans. Slice tool has a built in utility to help you easily select the correct scale.</p>
 </div>
 
 <div style="max-width:300px;margin:10px">
 <h3>Trim the Mesh</h3>
-<img src="./img/trimming.png">
+<img src="./img/trimming.png" width="300">
 <p >This feature allows you to trim parts from the mesh that are not important for your use case.</p>
 </div>
 
 <div style="max-width:300px;margin:10px">
 <h3>Slice the Mesh</h3>
-<img src="./img/slicing.png">
+<img src="./img/slicing.png" width="300">
 <p >The main feature of Slice Tool is a slicing utility that is easy and intuitively to use. You may select two points on the mesh by cicking on it to create an axis along which the slicing shall take place. Then you enter the slicing intervall. Additionally, you may define an offset trom the points to exclude parts you dont want to slice.</p>
 </div>
 
