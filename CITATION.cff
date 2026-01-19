@@ -1,0 +1,9 @@
+cff-version: 1.0
+message: "If you use this software, please cite it as below."
+authors:
+  - family-names: Naake
+    given-names: Anselm
+    orcid: https://orcid.org/0009-0007-2494-8903
+title: "SliceTool"
+version: 1.0.0
+date-released: 2026-01-19
