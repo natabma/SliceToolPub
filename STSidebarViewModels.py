@@ -2,7 +2,7 @@ from STUi import STUi
 from PyQt6.QtWidgets import QTableWidgetItem
 from PyQt6.QtGui import QDoubleValidator
 import numpy as np
-
+from PyQt6.QtCore import QLocale
 class ScaleWidgetViewModel():
     def __init__(self, view:STUi):
         self._view = view
@@ -75,17 +75,24 @@ class TrimWidgetViewModel():
 class SlicingWidgetViewModel():
     def __init__(self, view:STUi):
         self._view = view
+
+        custom_locale = QLocale(QLocale.Language.C) 
+        custom_locale.setNumberOptions(QLocale.NumberOption.RejectGroupSeparator)
+        
         self.PointInputValidator=QDoubleValidator(
                             decimals=2,
                             notation=QDoubleValidator.Notation.StandardNotation
                         )
+        self.PointInputValidator.setLocale(custom_locale)
+        
         self.slicing_input_validator=QDoubleValidator(
                                 bottom=0.0,
                                 top=100,
                                 decimals=2,
                                 notation=QDoubleValidator.Notation.StandardNotation
                             )
-        
+        self.slicing_input_validator.setLocale(custom_locale)
+
         self._view.lineEdit_p2_z.setValidator(self.PointInputValidator)
         self._view.lineEdit_p2_y.setValidator(self.PointInputValidator)
         self._view.lineEdit_p2_x.setValidator(self.PointInputValidator)
