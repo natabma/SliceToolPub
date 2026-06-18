@@ -40,7 +40,7 @@ The usage is demonstrated in a a short video (Clicking on the thumbnail will ope
 First, download this repository and unpack it. Notice that the folder must be on your local harddrive.
 
 1) Create a virtual environment in the folder. Python 11.9 is recommended.
-2) Install the requirements by calling 'pip install -r requirements. txt'.
+2) Install the requirements by calling 'pip install -r requirements/common.txt'.
 3) **IMPORTANT:** SliceTool uses the vedo library (https://github.com/marcomusy/vedo). Certain bugfixes of that package which are necessary for SliceTool to properly function are not included in its currently most recent version (2025.5.4) on PyPi. Instead, please download the vedo package directly from its repository and replace the vedo folder in your repository by it. 
    
 
