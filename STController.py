@@ -75,13 +75,13 @@ class STController(QObject):
             self._view.vplt_work.clear_everything_except(["UserMesh"])
             Cutter = self._model.startCutter()
             Cutter.add_to(self._view.vplt_work)
-            Cutter.render()
+            Cutter.GetCurrentRenderer().Render()
             self._view.vplt_work.render()
         else:
             Cutter = self._model.stopCutter()
             if Cutter != None:
                 Cutter.remove_from(self._view.vplt_work)
-                Cutter.render()
+                Cutter.GetCurrentRenderer().Render()
                 self._view.vplt_work.render()
 
     def _onInvertCutter(self):
@@ -262,8 +262,19 @@ class STController(QObject):
         self._model.saveSliceDataToExcel(excel_file_url)
 
     @pyqtSlot(str)
+    def _CurvesToExcel(self, excel_file_url):
+        self._model.saveSliceCurvesToExcel(excel_file_url)
+
+    @pyqtSlot(str)
     def _exportToCSV(self, csv_file_url):
         self._model.saveSliceDataToCSV(csv_file_url)
+
+    def _onClickExportSlices(self):
+        self._view.ExcelExportDialog.selectedFileSignal.connect(self._exportToExcel)
+        self._view.ExcelExportDialog.launch()
+    def _onClickExportCurves(self):
+        self._view.ExcelExportDialog.selectedFileSignal.connect(self._CurvesToExcel)
+        self._view.ExcelExportDialog.launch()
 
     def _connectSignalsAndSlots(self):
         self._view.pushButton_load_mesh.pressed.connect(
@@ -322,11 +333,14 @@ class STController(QObject):
             self._updateResultWidget
         )
         self._view.pushButton_export_curve_lengths_xls.clicked.connect(
-            self._view.ExcelExportDialog.launch
+            self._onClickExportSlices
         )
-        self._view.ExcelExportDialog.selectedFileSignal.connect(self._exportToExcel)
-        
         self._view.pushButton_export_curve_lengths_csv.clicked.connect(
             self._view.CSVExportDialog.launch
         )
+        self._view.pushButton_export_curve_xls.clicked.connect(
+            self._onClickExportCurves
+        )
+
         self._view.CSVExportDialog.selectedFileSignal.connect(self._exportToCSV)
+        # self._view.ExcelExportDialog

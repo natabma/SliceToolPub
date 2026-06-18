@@ -468,3 +468,15 @@ class MainModel:
 
         except Exception as e:
             print(e)
+
+    def saveSliceCurvesToExcel(self, excel_file_url):
+        
+        try:
+            with pd.ExcelWriter(excel_file_url) as writer:
+                for idx, sl in enumerate(self._data.slice_lines_list):
+                    curve_points_df=pd.DataFrame(sl.vertices,columns=["X","Y","Z"])
+                    curve_points_df.to_excel(writer, sheet_name=f"{idx}", index=False)
+                
+
+        except Exception as e:
+            print(e)

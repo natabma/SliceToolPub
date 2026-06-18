@@ -451,7 +451,7 @@ QPushButton:checked{
                 <x>0</x>
                 <y>0</y>
                 <width>350</width>
-                <height>660</height>
+                <height>523</height>
                </rect>
               </property>
               <property name="maximumSize">
@@ -762,6 +762,13 @@ QPushButton:checked{
             <widget class="QPushButton" name="pushButton_export_curve_lengths_csv">
              <property name="text">
               <string>Export Curve Lengths (.csv)</string>
+             </property>
+            </widget>
+           </item>
+           <item>
+            <widget class="QPushButton" name="pushButton_export_curve_xls">
+             <property name="text">
+              <string>Export Curve Coordinates (.xlsx)</string>
              </property>
             </widget>
            </item>
